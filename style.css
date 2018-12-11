@@ -1,0 +1,37 @@
+body{
+	background-color: powderblue;
+}
+h2{
+	text-align: center;
+}
+
+#customerTable, #journeyTable, #vehicleTable{
+	border: 2px solid black;
+	border-collapse: collapse;
+	margin: 20px;
+	background-color: grey;
+}
+th, td{
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 5px;
+}
+
+#customerTable td:nth-child(1), #journeyTable td:nth-child(1), #vehicleTable td:nth-child(1)   {
+	/*text-align: ;*/
+}
+
+.tab{
+	float: left;
+	display: block;
+}
+#map{
+	height: 300px;
+	width: 500px;
+	margin: 20px;
+}
+
+#ch{
+			height: 50%;
+			width: 50%;
+		}
