@@ -1,6 +1,11 @@
 //---- Initialize Firebase-----------------------------------------------------------------------
   var config = {
-    
+    apiKey: "AIzaSyDyKaH2nVG6_d8kH-AMcaRf73l6qOl8zpc",
+    authDomain: "rd-year-project-509e1.firebaseapp.com",
+    databaseURL: "https://rd-year-project-509e1.firebaseio.com",
+    projectId: "rd-year-project-509e1",
+    storageBucket: "rd-year-project-509e1.appspot.com",
+    messagingSenderId: "187157927542"
   };
   firebase.initializeApp(config);
 
