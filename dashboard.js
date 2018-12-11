@@ -8,7 +8,7 @@
     messagingSenderId: "187157927542"
   };
   firebase.initializeApp(config);
-
+  
 //------------CUSTOMER TABLE----------------------------------------------------------------------
 
   var tblCounts = document.getElementById("customerTable");
