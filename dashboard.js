@@ -55,7 +55,7 @@
       row2.insertCell(4).appendChild(document.createTextNode(itemD.endLong));
       row2.insertCell(5).appendChild(document.createTextNode(itemD.registration));
       row2.insertCell(6).appendChild(document.createTextNode(itemD.customer));
-      /*row2.insertCell(4).appendChild(document.createTextNode(itemSnapshot.key));*/
+      row2.insertCell(7).appendChild(document.createTextNode(itemD.price));
       
       rIndex += 1;
     })
