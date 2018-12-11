@@ -1,0 +1,138 @@
+{
+	"cabs": {
+		"customers": [{
+				"name": "Harry Brown",
+				"phone": "087123456",
+				"email": "hb@gmail.com",
+				"verified": "true"
+			},
+			{
+				"name": "Mary O Leary",
+				"phone": "0891299456",
+				"email": "molly@gmail.com",
+				"verified": "true"
+			},
+			{
+				"name": "Susan Jones",
+				"phone": "0861297865",
+				"email": "suJ2@hotmail.com",
+				"verified": "false"
+			},
+			{
+				"name": "Tom Jones",
+				"phone": "087654345",
+				"email": "tjones3@yahoo.com",
+				"verified": "false"
+			},
+			{
+				"name": "Mike Murphy",
+				"phone": "0891299456",
+				"email": "mkm77@gmail.com",
+				"verified": "true"
+			}
+		],
+		"journeys": [{
+				"registration": "12 C 12543",
+				"startLong": -8.472407299999986,
+				"startLat": 51.8984173,
+				"endLong": -8.55555999986,
+				"endLat": 51.6543173,
+				"price": 22.50,
+				"customer" : 0
+			},
+			{	
+				"registration": "141 D 22793",
+				"startLong": -8.505253000000039,
+				"startLat": 51.90385980000001,
+				"endLong": -8.3337299999986,
+				"endLat": 51.2384173,
+				"price": 12.00,
+				"customer" : 1
+			},
+			{	
+				"registration": "162 D 9186",
+				"startLong": -8.392445199999997,
+				"startLat": 51.8129635,
+				"endLong": -8.765647299999986,
+				"endLat": 51.9094173,
+				"price": 7.30,
+				"customer" : 4
+			},
+			{	
+				"registration": "152 D 99976",
+				"startLong": 127798,
+				"startLat": 75499,
+				"endLong": -8.654407299999986,
+				"endLat": 51.4584173,
+				"price": 40.00,
+				"customer" : 3
+			},
+			{	
+				"registration": "142 L 13242",
+				"startLong": 123336,
+				"startLat": 71239,
+				"endLong": -8.222407299999986,
+				"endLat": 51.7654173,
+				"price": 20.00,
+				"customer" : 2
+			}
+		],
+		"vehicles": [{
+				"registration": "12 C 12543",
+				"make": "Toyota",
+				"model": "Avensis",
+				"long": -8.472407299999986,
+				"lat": 51.8984173,
+				"jobID": 0,
+				"status" : 1
+			},
+			{
+				"registration": "141 D 22793",
+				"make": "Opel",
+				"model": "Insignia",
+				"long": -8.505253000000039,
+				"lat": 51.90385980000001,
+				"jobID": 1,
+				"status" : 1
+			},
+			{
+				"registration": "142 L 13242",
+				"make": "Opel",
+				"model": "Zafira",
+				"long": 123336,
+				"lat": 71239,
+				"jobID": 4,
+				"status" : 1
+			},
+			{
+				"registration": "152 D 99976",
+				"make": "Skoda",
+				"model": "Octavia",
+				"long": 127798,
+				"lat": 75499,
+				"jobID": 3,
+				"status" : 1
+			},
+			{
+				"registration": "162 D 9186",
+				"make": "Nissan",
+				"model": "Primera",
+				"long": -8.392445199999997,
+				"lat": 51.8129635,
+				"jobID": 2,
+				"status" : 1
+			},
+			{
+				"registration": "181 G 11332",
+				"make": "Honda",
+				"model": "Civic",
+				"long": 0,
+				"lat": 0,
+				"jobID": -1,
+				"status" : 0
+			}
+		]
+	}
+
+
+}

@@ -81,7 +81,8 @@
       row3.insertCell(2).appendChild(document.createTextNode(itemD2.model));
       row3.insertCell(3).appendChild(document.createTextNode(itemD2.long));
       row3.insertCell(4).appendChild(document.createTextNode(itemD2.lat));
-      row3.insertCell(5).appendChild(document.createTextNode(itemD2.status));
+	  row3.insertCell(5).appendChild(document.createTextNode(itemD2.jobID));
+      row3.insertCell(6).appendChild(document.createTextNode(itemD2.status));
       
       rIndex2 += 1;
     })
