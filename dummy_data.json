@@ -4,31 +4,31 @@
 				"name": "Harry Brown",
 				"phone": "087123456",
 				"email": "hb@gmail.com",
-				"verified": "true"
+				"verified": "Y"
 			},
 			{
 				"name": "Mary O Leary",
 				"phone": "0891299456",
 				"email": "molly@gmail.com",
-				"verified": "true"
+				"verified": "Y"
 			},
 			{
 				"name": "Susan Jones",
 				"phone": "0861297865",
 				"email": "suJ2@hotmail.com",
-				"verified": "false"
+				"verified": "N"
 			},
 			{
 				"name": "Tom Jones",
 				"phone": "087654345",
 				"email": "tjones3@yahoo.com",
-				"verified": "false"
+				"verified": "N"
 			},
 			{
 				"name": "Mike Murphy",
 				"phone": "0891299456",
 				"email": "mkm77@gmail.com",
-				"verified": "true"
+				"verified": "Y"
 			}
 		],
 		"journeys": [{
