@@ -49,10 +49,12 @@
       var row2 = tableCounts.insertRow(rIndex);
       //populate cells
       row2.insertCell(0).appendChild(document.createTextNode(itemSnapshot.key));//rIndex+"."
-      row2.insertCell(1).appendChild(document.createTextNode(itemD.lat));
-      row2.insertCell(2).appendChild(document.createTextNode(itemD.long));
-      row2.insertCell(3).appendChild(document.createTextNode(itemD.registration));
-      row2.insertCell(4).appendChild(document.createTextNode(itemD.customer));
+       row2.insertCell(1).appendChild(document.createTextNode(itemD.startLat));
+      row2.insertCell(2).appendChild(document.createTextNode(itemD.startLong));
+      row2.insertCell(3).appendChild(document.createTextNode(itemD.endLat));
+      row2.insertCell(4).appendChild(document.createTextNode(itemD.endLong));
+      row2.insertCell(5).appendChild(document.createTextNode(itemD.registration));
+      row2.insertCell(6).appendChild(document.createTextNode(itemD.customer));
       /*row2.insertCell(4).appendChild(document.createTextNode(itemSnapshot.key));*/
       
       rIndex += 1;
