@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin Dashboard</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<a href="edit-table.html"><li>Edit</li></a>
+		</ul>
+	</nav>
+	<div class="tab" id="ctab">
+		<h2>Customers</h2>
+		<table id="customerTable">
+			<tr>
+				<th>CKey</th>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Phone</th>
+				<th>Verified</th>
+			</tr>
+		</table>
+	</div>
+
+	<div class="tab" id="jtab">
+		<h2>Journeys</h2>
+		<table id="journeyTable">
+			<tr>
+				<th>Key</th>
+				<th>Longitude</th>
+				<th>Latitude</th>
+				<th>Registration</th>
+				<th>Customer</th>
+				<!-- <th>Key</th> -->
+			</tr>
+		</table>
+	</div>
+
+	<div class="tab" id="vtab">
+		<h2>Vehicles</h2>
+		<table id="vehicleTable">
+			<tr>
+				<!-- <th>Row</th> -->
+				<th>Registration</th>
+				<th>Make</th>
+				<th>Model</th>
+				<th>Longitude</th>
+				<th>Latitude</th>
+				<th>Status</th>
+			</tr>
+		</table>
+	</div>
+	
+	<div id="map"></div>
+	<div id="long-lat">
+		<form id="lform">
+		  Registration Number:<br>
+		  <input type="text" name="reg-num" id="reg-num">
+		  <br>
+		  <button id="submit">Find Vehicle</button>
+		  <!-- <input type="submit" value="Find Vehicle" id="submit"> -->
+		</form> 
+	</div>
+	<div id="directions">
+		<form id="direction-form">
+			Origin:<br>
+			<input type="text" name="origin" id="origin">
+		  <br>
+		  Destination:<br>
+		  <input type="text" name="destination" id="destination">
+		  <br>
+		  <button id="route">Create Route</button>
+		</form>
+	</div>
+	<div id="ch">
+		<canvas id="myChart"></canvas>
+	</div>
+	<!-- <div id="message">
+		<h2>Messaging</h2>
+	</div> -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/5.5.8/firebase.js"></script>
+	<script type="text/javascript" src="dashboard.js"></script>
+	
+    
+	
+</body>
+</html>
