@@ -1,94 +1,87 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>Admin Dashboard</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<nav>
-		<ul>
-			<a href="#"><li>Edit</li></a>
-		</ul>
-	</nav>
-	<div class="tab" id="ctab">
-		<h2>Customers</h2>
-		<table id="customerTable">
-			<tr>
-				<th>CKey</th>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Phone</th>
-				<th>Verified</th>
-			</tr>
-		</table>
-	</div>
-	
-	<div class="tab" id="vtab">
-		<h2>Vehicles</h2>
-		<table id="vehicleTable">
-			<tr>
-				<!-- <th>Row</th> -->
-				<th>Registration</th>
-				<th>Make</th>
-				<th>Model</th>
-				<th>Longitude</th>
-				<th>Latitude</th>
-				<th>Job ID</th>
-				<th>Status</th>
-			</tr>
-		</table>
-	</div>
-
-	<div class="tab" id="jtab">
-		<h2>Journeys</h2>
-		<table id="journeyTable">
-			<tr>
-				<th>Key</th>
-				<th>Start Lng</th>
-				<th>Start Lat</th>
-				<th>End Lng</th>
-				<th>End Lat</th>
-				<th>Registration</th>
-				<th>Customer</th>
-				<th>Price</th>
-			</tr>
-		</table>
-	</div>
-
-	
-	
-	<div id="map"></div>
-	<div id="long-lat">
-		<form id="lform">
-		  Registration Number:<br>
-		  <input type="text" name="reg-num" id="reg-num">
-		  <br>
-		  <button id="submit">Find Vehicle</button>
-		  <!-- <input type="submit" value="Find Vehicle" id="submit"> -->
-		</form> 
-	</div>
-	<div id="directions">
-		<form id="direction-form">
-			Origin:<br>
-			<input type="text" name="origin" id="origin">
-		  <br>
-		  Destination:<br>
-		  <input type="text" name="destination" id="destination">
-		  <br>
-		  <button id="route">Create Route</button>
-		</form>
-	</div>
-	<div id="ch">
-		<canvas id="myChart"></canvas>
-	</div>
-	<!-- <div id="message">
-		<h2>Messaging</h2>
-	</div> -->
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
-	<script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
-	<script type="text/javascript" src="dashboard.js"></script>
-	
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css"
+   integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+   crossorigin=""/>
+    <title>Admin</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <div id="mapid"></div>
+    <!-- built files will be auto injected -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     
-	
-</body>
+    <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"
+   integrity="sha512-QVftwZFqvtRNi0ZyCtsznlKSWOStnDORoefr1enyq5mVL4tmKB3S/EnC3rRJcxCPavG10IcrVGSmPh6Qw5lwrg=="
+   crossorigin=""></script>
+   <script src="https://www.gstatic.com/firebasejs/5.7.0/firebase.js"></script>
+   <script> 
+    var mymap = L.map('mapid').setView([51.8984173, -8.472407299999986], 13);
+    L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets',
+    accessToken: '*********************************'
+}).addTo(mymap);
+
+
+//-------------CREATE JOURNEY OBJECTS WITH MAP MARKERS-----------------------
+var config = {
+
+apiKey: "*********************************",
+authDomain: "*********************************",
+databaseURL: "*********************************",
+projectId: "*********************************",
+storageBucket: "*********************************",
+messagingSenderId: "*************************"
+};
+firebase.initializeApp(config);
+
+  //connect to vehicle node in DB
+  const journeyForMap = firebase.database().ref("cabs/vehicles/").orderByChild("long");
+  //array for journey objects
+  var journeys=[];
+  //loop through each item 
+  journeyForMap.once("value",function(snapshot) {
+    snapshot.forEach(function(itemSnapshot) {
+      //get data for one item | everything except key
+      var arrItem = itemSnapshot.val();
+      //create object for each journey
+      var newJourney = {
+        "long" : arrItem.long,
+        "latt" : arrItem.lat,
+        "reg" : arrItem.registration
+      }
+      //add object to array
+      journeys.push(newJourney);
+    })
+    
+    //loop to check array contents and add markers
+    for(var i = 0; i < journeys.length; i++) {
+    console.log(journeys[i].long + " * " + journeys[i].latt + " " + journeys[i].reg);
+     //get current time
+    var dt = new Date();
+    var tm = dt.getHours() + " : " + dt.getMinutes();
+
+    var marker = new L.marker([journeys[i].latt,journeys[i].long],{title: "Vehicle" }  ).addTo(mymap);
+          marker.bindPopup("Vehicle: " + journeys[i]["reg"] + "\nLocation: " + journeys[i].latt + " " 
+                  + journeys[i].long +"\nTime: " + tm);
+          marker.on('click', onClick);
+      
+    function onClick(e) {
+          var popup = e.target.getPopup();
+          var content = popup.getContent();
+      }
+    }
+}) 
+    </script>
+  </body>
 </html>
